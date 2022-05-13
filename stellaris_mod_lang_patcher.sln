@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32210.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "stellaris_mod_lang_patcher", "stellaris_mod_lang_patcher\stellaris_mod_lang_patcher.csproj", "{D1E74FA1-6029-40CC-8B4D-1D67846142C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1E74FA1-6029-40CC-8B4D-1D67846142C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E74FA1-6029-40CC-8B4D-1D67846142C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E74FA1-6029-40CC-8B4D-1D67846142C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E74FA1-6029-40CC-8B4D-1D67846142C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F465EDEC-EEBF-4246-9282-2D413F5607CA}
+	EndGlobalSection
+EndGlobal
