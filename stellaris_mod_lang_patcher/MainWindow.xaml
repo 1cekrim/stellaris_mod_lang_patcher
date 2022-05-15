@@ -5,39 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:stellaris_mod_lang_patcher"
         mc:Ignorable="d"
-        Title="Stellaris Mod Language Patcher" Height="850" Width="600">
+        Title="Stellaris Mod Language Patcher" Height="600" Width="800">
     <Grid>
-        <StackPanel>
-            <GroupBox Header="config" Margin="5">
-                <StackPanel>
-                    <TextBox Name="TextBox_Mod_Folder" Grid.Column="1">C:\Program Files (x86)\Steam\steamapps\workshop\content\281990</TextBox>
-                    <Grid HorizontalAlignment="Center" Width="400">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label HorizontalAlignment="Center">From</Label>
-                        <TextBox Grid.Column="1" Margin="2" VerticalAlignment="Center" Name="TextBox_From">english</TextBox>
-                        <Label HorizontalAlignment="Center" Grid.Column="2">To</Label>
-                        <TextBox Grid.Column="3" Margin="2" VerticalAlignment="Center" Name="TextBox_To">korean</TextBox>
-                    </Grid>
-                    <Button Name="Button_LoadModList" Click="Button_LoadModList_Click">Load Mod List</Button>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox Margin="5" Header="Mod List">
-                <ScrollViewer Height="600">
-                    <ItemsControl ItemsSource="{Binding}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Name}" />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-            </GroupBox>
-            <Button Name="Button_Patch" Margin="5" Click="Button_Patch_Click">Patch</Button>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="config" Margin="5">
+            <StackPanel>
+                <TextBox Name="TextBox_Mod_Folder" Grid.Column="1">C:\Program Files (x86)\Steam\steamapps\workshop\content\281990</TextBox>
+                <Grid HorizontalAlignment="Center" Width="400">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label HorizontalAlignment="Center">From</Label>
+                    <TextBox Grid.Column="1" Margin="2" VerticalAlignment="Center" Name="TextBox_From">english</TextBox>
+                    <Label HorizontalAlignment="Center" Grid.Column="2">To</Label>
+                    <TextBox Grid.Column="3" Margin="2" VerticalAlignment="Center" Name="TextBox_To">korean</TextBox>
+                </Grid>
+                <Button Name="Button_LoadModList" Click="Button_LoadModList_Click">Load Mod List</Button>
+            </StackPanel>
+        </GroupBox>
+        <ScrollViewer Grid.Row="1">
+            <DataGrid Name="Mod_List" ItemsSource="{Binding}" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Code"  Binding="{Binding Code}" Width="100" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="400" IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="DataGridTextColumn_From" Header="support fromlang" Binding="{Binding HasFrom}" Width="1* " IsReadOnly="True"/>
+                    <DataGridTextColumn x:Name="DataGridTextColumn_To" Header="support tolang" Binding="{Binding HasTo}"  Width="1*" IsReadOnly="True"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+        <Button Grid.Row="2" Name="Button_Patch" Margin="5" Click="Button_Patch_Click">Patch</Button>
     </Grid>
 </Window>
